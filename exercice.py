@@ -24,25 +24,31 @@ def average(values):
 
 def bills(value):
 	# TODO: Calculez le nombre de billets de 20$, 10$ et 5$ et pièces de 1$ à remettre pour représenter la valeur.
-	twenties = 0
-	tens = 0
-	fives = 0
-	ones = 0
-	while value != 0:
-		if value >= 20:
-			twenties += 1
-			value -= 20
-		elif value >= 10:
-			tens += 1
-			value -= 10
-		elif value >= 5:
-			fives += 1
-			value -= 5
-		elif value >= 1:
-			ones += 1
-			value -= 1
+	# twenties = 0
+	# tens = 0
+	# fives = 0
+	# ones = 0
+	# while value != 0:
+	# 	if value >= 20:
+	# 		twenties = value // 20
+	# 		value %= 20
+	# 	elif value >= 10:
+	# 		tens = value // 10
+	# 		value %= 10
+	# 	elif value >= 5:
+	# 		tens = value // 5
+	# 		value %= 5
+	# 	elif value >= 1:
+	# 		ones = value
+	# 		value %= 1
+	bill_values = [20, 10, 5, 1]
+	result = []
+	for bill in bill_values:
+		if(value >= bill):
+			result += [value // bill]
+			value %= bill
 
-	return (twenties, tens, fives, ones);
+	return result
 
 if __name__ == "__main__":
 	print(dissipated_power(69, 420))
